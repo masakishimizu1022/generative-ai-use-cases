@@ -74,6 +74,33 @@
         "category": "Search",
         "description": "Web search and research capabilities powered by Tavily"
       }
+    },
+    "awslabs.redshift-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.redshift-mcp-server@latest"],
+      "env": {
+        "AWS_PROFILE": "default",
+        "AWS_DEFAULT_REGION": "us-east-1",
+        "FASTMCP_LOG_LEVEL": "INFO"
+      },
+      "metadata": {
+        "category": "Other",
+        "description": "Interact with Amazon Redshift databases"
+      }
+    },
+    "awslabs.bedrock-kb-retrieval-mcp-serve": {
+      "command": "uvx",
+      "args": ["awslabs.bedrock-kb-retrieval-mcp-server@latest"],
+      "env": {
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-east-1",
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "BEDROCK_KB_RERANKING_ENABLED": "false"
+      },
+      "metadata": {
+        "category": "Other",
+        "description": "Bedrock Knowledge Base Retrieval capabilities"
+      }
     }
   }
 }

@@ -239,6 +239,18 @@ export class GenericAgentCore extends Construct {
       })
     );
 
+    // SSM Parameter Store access for AWS credentials (used by MCP servers)
+    role.addToPolicy(
+      new PolicyStatement({
+        sid: 'SSMParameterAccess',
+        effect: Effect.ALLOW,
+        actions: ['ssm:GetParameter'],
+        resources: [
+          `arn:aws:ssm:*:${Stack.of(this).account}:parameter/genai/agentcore/*`,
+        ],
+      })
+    );
+
     this._fileBucket.grantWrite(role);
   }
 
