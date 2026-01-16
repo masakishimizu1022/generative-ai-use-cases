@@ -46,6 +46,32 @@ const envs: Record<string, Partial<StackInput>> = {
     ],
     // Parameters for development environment
   },
+  closed: {
+    closedNetworkMode: true,
+    ragEnabled: true,
+    ragKnowledgeBaseEnabled: true,
+    agentEnabled: true,
+    searchAgentEnabled: true,
+    agents: [
+      {
+        displayName: '[MyAgent]WebSearchAgent',
+        agentId: 'XGWQENBWGK',
+        aliasId: 'CYIAC9AZNQ',
+        description: 'An agent that can search the web using Brave Search',
+      },
+    ],
+    agentBuilderEnabled: true,
+    createGenericAgentCoreRuntime: true,
+    agentCoreRegion: 'us-east-1',
+    agentCoreExternalRuntimes: [
+      {
+        name: '[MyAgent]MLITAgent',
+        arn: 'arn:aws:bedrock-agentcore:us-east-1:686255981546:runtime/manual_supervisor_agent-8awqrb3D23',
+        description: 'An external runtime that uses MLIT',
+      },
+    ],
+    // Parameters for development environment
+  },
   prd: {
     // Parameters for production environment
   },
