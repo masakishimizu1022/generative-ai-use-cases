@@ -101,6 +101,14 @@
         "category": "Other",
         "description": "Bedrock Knowledge Base Retrieval capabilities"
       }
+    },
+    "awslabs.s3-tables-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.s3-tables-mcp-server@latest"],
+      "env": {
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "ap-northeast-1"
+      }
     }
   }
 }
